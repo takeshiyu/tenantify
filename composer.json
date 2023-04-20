@@ -43,6 +43,13 @@
             "@php vendor/bin/testbench package:discover --ansi"
         ]
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wuhsien\\Tenantify\\TenantifyServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }

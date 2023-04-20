@@ -1,6 +1,6 @@
 # Tenantify
 
-`Tenantify` is a Laravel package designed to make implementing a multi-tenancy architecture easy and efficient. With `Tenantify`, you can quickly set up your application to support multiple tenants using a **single database**, with each tenant being identified by a **unique subdomain**.
+**Tenantify** is a Laravel package designed to make implementing a multi-tenancy architecture easy and efficient. With **Tenantify**, you can quickly set up your application to support multiple tenants using a **single database**, with each tenant being identified by a **unique subdomain**.
 
 ### Features
 
@@ -11,7 +11,7 @@
 
 ### Installation
 
-To install `Tenantify`, follow these simple steps:
+To install **Tenantify**, follow these simple steps:
 
 1. Install the package via Composer:
 
@@ -23,6 +23,17 @@ composer require wuhsien/tenantify
 
 ```bash
 php artisan vendor:publish --provider="Wuhsien\Tenantify\TenantifyServiceProvider" --tag="config"
+```
+
+### Configuration
+
+After installing **Tenantify**, you can configure it according to your application's requirements. Open the `config/tenantify.php` file and adjust the settings as needed:
+
+```php
+return [
+    'tenant_model' => App\Models\Tenant::class,
+    'tenant_column' => 'slug',
+];
 ```
 
 ## License
