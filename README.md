@@ -31,7 +31,7 @@ After installing **Tenantify**, you can configure it according to your applicati
 
 ```php
 return [
-	'tenant_domain' => 'tenantify.test',
+    'tenant_domain' => 'tenantify.test',
     'tenant_model' => App\Models\Tenant::class,
     'tenant_column' => 'slug',
 ];
