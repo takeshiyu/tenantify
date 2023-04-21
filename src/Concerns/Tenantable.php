@@ -13,6 +13,6 @@ trait Tenantable
      */
     public function getRouteKeyName()
     {
-        return Config::get('tenantify.tenant_column');
+        return Config::get('tenantify.tenant_slug');
     }
 }

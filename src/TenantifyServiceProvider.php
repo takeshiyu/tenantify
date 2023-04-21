@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Wuhsien\Tenantify\Middleware\ResolveTenant;
+use Wuhsien\Tenantify\TenancyManager;
 
 class TenantifyServiceProvider extends ServiceProvider
 {
@@ -17,6 +18,10 @@ class TenantifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/tenantify.php', 'tenantify');
+
+        $this->app->singleton(TenancyManager::class, function (Application $app) {
+            return new TenancyManager($app, Config::get('tenantify'));
+        });
     }
 
     /**
@@ -31,7 +36,12 @@ class TenantifyServiceProvider extends ServiceProvider
         $this->registerRouteMacro();
     }
 
-    protected function registerRouteMacro()
+    /**
+     * Register route macro
+     *
+     * @return void
+     */
+    protected function registerRouteMacro(): void
     {
         Route::macro('tenancy', function ($groups) {
             Route::domain(sprintf('{tenant}.%s', Config::get('tenantify.tenant_domain')))
