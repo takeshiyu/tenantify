@@ -17,6 +17,8 @@ class TenantifyServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/tenantify.php', 'tenantify');
 
+        $this->app['router']->aliasMiddleware('tenantify.resolve', ResolveTenant::class);
+
         $this->app->singleton(TenancyManager::class, function (Application $app) {
             return new TenancyManager($app, Config::get('tenantify'));
         });
@@ -42,7 +44,7 @@ class TenantifyServiceProvider extends ServiceProvider
         Route::macro('tenancy', function ($groups) {
             Route::domain(sprintf('{tenant}.%s', Config::get('tenantify.tenant_domain')))
                 ->middleware([
-                    ResolveTenant::class,
+                    'tenantify.resolve',
                 ])
                 ->group($groups);
         });
