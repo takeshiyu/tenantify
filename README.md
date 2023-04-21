@@ -38,7 +38,7 @@ return [
 ];
 ```
 
-### Using a custom tenant model
+### Custom Model
 
 If you want to use your custom model and use it for route binding, Make sure that your custom model use the `Wuhsien\Tenantify\Concerns\Tenantable` trait:
 
@@ -51,7 +51,7 @@ class YourCustomModel extends Model
 }
 ```
 
-### Query scopes 
+### Query Scopes 
 
 To scope your queries correctly, apply the `Wuhsien\Tenantify\Concerns\HasTenancy` trait on your models:
 
@@ -64,7 +64,7 @@ class YourModel extends Model
 }
 ```
 
-### Route macro
+### Route Macro
 
 In `routes/web.php` file, define your tenant-specific routes using the `tenancy` macro:
 
@@ -74,7 +74,7 @@ Route::tenancy(function () {
 });
 ```
 
-### Work with current tenant
+### Current Tenant
 
 There are several methods available to work with current tenant:
 
