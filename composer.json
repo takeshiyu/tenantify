@@ -44,7 +44,10 @@
             "@php vendor/bin/testbench package:discover --ansi"
         ],
         "test:lint": "pint --test",
-        "test:unit": "pest --profile --coverage --colors=always",
+        "test:unit": [
+            "@putenv XDEBUG_MODE=coverage",
+            "pest --colors=always -v"
+        ],
         "test": [
             "@test:lint",
             "@test:unit"
