@@ -41,6 +41,12 @@
     "scripts": {
         "post-autoload-dump": [
             "@php vendor/bin/testbench package:discover --ansi"
+        ],
+        "test:lint": "pint --test",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:lint",
+            "@test:unit"
         ]
     },
     "extra": {

@@ -5,17 +5,13 @@ namespace Wuhsien\Tenantify;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 use Wuhsien\Tenantify\Exceptions\TenancyNotInitializedException;
 
 class TenancyManager
 {
     /**
-     * Create a new session table command instance.
+     * Create a new manager instance.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
-     * @param  array  $config
-     * @param  \Illuminate\Database\Eloquent\Model|null  $tenant
      *
      * @return void
      */
@@ -23,13 +19,11 @@ class TenancyManager
         protected Application $app,
         protected array $config,
         protected ?Model $tenant = null
-    ){}
+    ) {
+    }
 
     /**
      * Resolve the tenant via request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return void
      */
     public function resolve(Request $request): void
     {
@@ -40,8 +34,6 @@ class TenancyManager
 
     /**
      * Get the ID for the currently tenant.
-     *
-     * @return int
      */
     public function id(): int
     {
@@ -50,8 +42,6 @@ class TenancyManager
 
     /**
      * Get the slug for the currently tenant.
-     *
-     * @return string
      */
     public function slug(): string
     {
@@ -63,12 +53,11 @@ class TenancyManager
     /**
      * Get the currently resolved tenant.
      *
-     * @return \Illuminate\Database\Eloquent\Model
      * @throws \Wuhsien\Tenantify\Exceptions\TenancyNotInitializedException
      */
     public function tenant(): Model
     {
-        if (!$this->tenant) {
+        if (! $this->tenant) {
             throw new TenancyNotInitializedException;
         }
 
