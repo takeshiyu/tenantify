@@ -34,7 +34,7 @@ return [
     'tenant_domain' => 'tenantify.test',
     'tenant_model' => App\Models\Tenant::class,
     'tenant_column' => 'slug',
-	'tenant_key' => 'tenant_id',
+    'tenant_key' => 'tenant_id',
 ];
 ```
 
@@ -47,7 +47,7 @@ use Wuhsien\Tenantify\Concerns\Tenantable;
 
 class YourCustomModel extends Model
 {
-	use Tenantable;
+    use Tenantable;
 }
 ```
 
@@ -60,7 +60,7 @@ use Wuhsien\Tenantify\Concerns\HasTenancy;
 
 class YourModel extends Model
 {
-	use HasTenancy;
+    use HasTenancy;
 }
 ```
 
@@ -86,7 +86,7 @@ Tenancy::id();      // returns current tenant id
 Tenancy::slug();    // returns current tenant slug
 ```
 
-IF no tenant is found, it will throw the `TenancyNotInitializedException`.
+If no tenant is found, it will throw the `TenancyNotInitializedException`.
 
 ### Testing 
 
