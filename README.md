@@ -23,7 +23,7 @@ To install **Tenantify**, follow these simple steps:
 composer require takeshiyu/tenantify
 ```
 
-2. Publish the configuration file:
+2. Publish the configuration file and model:
 
 ```bash
 php artisan vendor:publish --provider="TakeshiYu\Tenantify\TenantifyServiceProvider"
