@@ -1,6 +1,7 @@
 {
     "name": "wuhsien/tenantify",
     "description": "Tenantify is a Laravel package designed to make implementing a multi-tenancy architecture easy and efficient. With Tenantify, you can quickly set up your application to support multiple tenants using a single database, with each tenant being identified by a unique subdomain.",
+    "keywords": ["php", "laravel", "subdomain", "multi-tenancy", "tenancy", "tenantify"],
     "type": "lirary",
     "license": "MIT",
     "authors": [
