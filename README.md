@@ -34,10 +34,37 @@ return [
     'tenant_domain' => 'tenantify.test',
     'tenant_model' => App\Models\Tenant::class,
     'tenant_column' => 'slug',
+	'tenant_key' => 'tenant_id',
 ];
 ```
 
-### Usage
+### Using a custom tenant model
+
+If you want to use your custom model and use it for route binding, Make sure that your custom model use the `Wuhsien\Tenantify\Concerns\Tenantable` trait:
+
+```php
+use Wuhsien\Tenantify\Concerns\Tenantable;
+
+class YourCustomModel extends Model
+{
+	use Tenantable;
+}
+```
+
+### Query scopes 
+
+To scope your queries correctly, apply the `Wuhsien\Tenantify\Concerns\HasTenancy` trait on your models:
+
+```php
+use Wuhsien\Tenantify\Concerns\HasTenancy;
+
+class YourModel extends Model
+{
+	use HasTenancy;
+}
+```
+
+### Route macro
 
 In `routes/web.php` file, define your tenant-specific routes using the `tenancy` macro:
 
@@ -46,6 +73,30 @@ Route::tenancy(function () {
     // your tenant routes here ...
 });
 ```
+
+### Work with current tenant
+
+You can get the current tenant instance like this:
+
+```php
+use Wuhsien\Tenantify\Tenancy;
+
+Tenancy::tenant();
+```
+
+or, get the current tenant id:
+
+```php
+Tenancy::id();
+```
+
+or get the current tenant slug:
+
+```php
+Tenancy::slug();
+```
+
+IF no tenant is found, it will throw the `TenancyNotInitializedException`.
 
 ### Testing 
 
