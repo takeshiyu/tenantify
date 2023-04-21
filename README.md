@@ -1,9 +1,9 @@
 # Tenantify
 
 <a href="https://github.com/takeshiyu/tenantify/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/takeshiyu/tenantify/test.yml"></a>
-<a href="https://packagist.org/packages/takeshiyu/tenantify"><img alt="Packagist License" src="https://img.shields.io/packagist/l/takeshiyu/tenantify?style=flat-square"></a>
-<a href="https://packagist.org/packages/takeshiyu/tenantify"><img alt="Latest Version" src="https://img.shields.io/packagist/v/takeshiyu/tenantify?style=flat-square"></a>
-<a href="https://packagist.org/packages/takeshiyu/tenantify"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/takeshiyu/tenantify?style=flat-square"></a>
+<a href="https://packagist.org/packages/takeshiyu/tenantify"><img alt="Packagist License" src="https://img.shields.io/packagist/l/takeshiyu/tenantify"></a>
+<a href="https://packagist.org/packages/takeshiyu/tenantify"><img alt="Latest Version" src="https://img.shields.io/packagist/v/takeshiyu/tenantify"></a>
+<a href="https://packagist.org/packages/takeshiyu/tenantify"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/takeshiyu/tenantify"></a>
 
 **Tenantify** is a Laravel package designed to make implementing a multi-tenancy architecture easy and efficient. With **Tenantify**, you can quickly set up your application to support multiple tenants using a **single database**, with each tenant being identified by a **unique subdomain**.
 
