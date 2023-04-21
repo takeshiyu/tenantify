@@ -12,7 +12,6 @@ class TenancyManager
     /**
      * Create a new manager instance.
      *
-     *
      * @return void
      */
     public function __construct(
@@ -27,7 +26,9 @@ class TenancyManager
      */
     public function resolve(Request $request): void
     {
-        $currentTenant = $request->tenant;
+        $currentTenant = $request->tenant instanceof Model
+            ? $request->tenant
+            : $this->resolveTenantFromSubdomain($request);
 
         $this->tenant = $currentTenant;
     }
@@ -62,5 +63,15 @@ class TenancyManager
         }
 
         return $this->tenant;
+    }
+
+    /**
+     * Resolve tenat from subdomain
+     */
+    protected function resolveTenantFromSubdomain(Request $request): null|Model
+    {
+        $subdomain = explode('.', $request->getHost())[0];
+
+        return $this->config['tenant_model']::where($this->config['tenant_slug'], $subdomain)->first();
     }
 }
