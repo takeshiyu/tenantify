@@ -45,12 +45,12 @@ return [
 
 ### Custom Model
 
-If you want to use your custom model and use it for route binding, Make sure that your custom model use the `TakeshiYu\Tenantify\Concerns\Tenantable` trait:
+By default, **Tenantify** uses `App\Models\Tenant` ( configured in `config/tenantify.php` ) as the tenant model, but you can adjust the default model according to your application's needs. Please make sure to use the `TakeshiYu\Tenantify\Concerns\Tenantable` trait in your model.
 
 ```php
 use TakeshiYu\Tenantify\Concerns\Tenantable;
 
-class YourCustomModel extends Model
+class YourTenantModel extends Model
 {
     use Tenantable;
 }
