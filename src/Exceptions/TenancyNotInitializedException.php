@@ -1,6 +1,6 @@
 <?php
 
-namespace Wuhsien\Tenantify\Exceptions;
+namespace TakeshiYu\Tenantify\Exceptions;
 
 use Exception;
 

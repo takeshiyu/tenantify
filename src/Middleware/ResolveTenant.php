@@ -1,6 +1,6 @@
 <?php
 
-namespace Wuhsien\Tenantify\Middleware;
+namespace TakeshiYu\Tenantify\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response;
-use Wuhsien\Tenantify\Tenancy;
+use TakeshiYu\Tenantify\Tenancy;
 
 class ResolveTenant
 {

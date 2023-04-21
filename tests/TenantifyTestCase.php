@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests;
+namespace TakeshiYu\Tenantify\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase;
-use Wuhsien\Tenantify\TenantifyServiceProvider;
+use TakeshiYu\Tenantify\TenantifyServiceProvider;
 
 class TenantifyTestCase extends TestCase
 {
@@ -41,6 +41,8 @@ class TenantifyTestCase extends TestCase
      */
     protected function defineRoutes($router)
     {
+        $router->get('/home', fn () => 'ok')->middleware('tenantify.resolve');
+
         $router->tenancy(fn ($router) => $router->get('/', fn () => 'ok'));
     }
 }

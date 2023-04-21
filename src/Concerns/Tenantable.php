@@ -1,6 +1,6 @@
 <?php
 
-namespace Wuhsien\Tenantify\Concerns;
+namespace TakeshiYu\Tenantify\Concerns;
 
 use Illuminate\Support\Facades\Config;
 

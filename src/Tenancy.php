@@ -1,6 +1,6 @@
 <?php
 
-namespace Wuhsien\Tenantify;
+namespace TakeshiYu\Tenantify;
 
 use Illuminate\Support\Facades\Facade;
 

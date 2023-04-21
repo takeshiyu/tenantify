@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Models;
+namespace TakeshiYu\Tenantify\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Wuhsien\Tenantify\Concerns\Tenantable;
+use TakeshiYu\Tenantify\Concerns\Tenantable;
 
 class TenantTest extends Model
 {

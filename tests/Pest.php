@@ -11,7 +11,7 @@
 |
 */
 
-uses(Tests\TenantifyTestCase::class)->in('Feature');
+uses(TakeshiYu\Tenantify\Tests\TenantifyTestCase::class)->in('Feature');
 
 /*
 |--------------------------------------------------------------------------

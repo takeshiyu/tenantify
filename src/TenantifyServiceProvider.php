@@ -1,12 +1,12 @@
 <?php
 
-namespace Wuhsien\Tenantify;
+namespace TakeshiYu\Tenantify;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Wuhsien\Tenantify\Middleware\ResolveTenant;
+use TakeshiYu\Tenantify\Middleware\ResolveTenant;
 
 class TenantifyServiceProvider extends ServiceProvider
 {
@@ -32,6 +32,10 @@ class TenantifyServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/tenantify.php' => config_path('tenantify.php'),
         ], 'config');
+
+        $this->publishes([
+            __DIR__.'/../stubs/Tenant.php' => app_path('Models/Tenant.php'),
+        ], 'tenantify-support');
 
         $this->registerRouteMacro();
     }

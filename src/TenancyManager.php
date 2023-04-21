@@ -1,11 +1,11 @@
 <?php
 
-namespace Wuhsien\Tenantify;
+namespace TakeshiYu\Tenantify;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use Wuhsien\Tenantify\Exceptions\TenancyNotInitializedException;
+use TakeshiYu\Tenantify\Exceptions\TenancyNotInitializedException;
 
 class TenancyManager
 {

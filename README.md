@@ -1,8 +1,8 @@
 # Tenantify
 
-<a href="https://packagist.org/packages/wuhsien/tenantify"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/wuhsien/tenantify"></a>
-<a href="https://packagist.org/packages/wuhsien/tenantify"><img alt="Latest Version" src="https://img.shields.io/packagist/v/wuhsien/tenantify"></a>
-<a href="https://packagist.org/packages/wuhsien/tenantify"><img alt="License" src="https://img.shields.io/packagist/l/wuhsien/tenantify"></a>
+<a href="https://packagist.org/packages/takeshiyu/tenantify"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/takeshiyu/tenantify"></a>
+<a href="https://packagist.org/packages/takeshiyu/tenantify"><img alt="Latest Version" src="https://img.shields.io/packagist/v/takeshiyu/tenantify"></a>
+<a href="https://packagist.org/packages/takeshiyu/tenantify"><img alt="License" src="https://img.shields.io/packagist/l/takeshiyu/tenantify"></a>
 
 **Tenantify** is a Laravel package designed to make implementing a multi-tenancy architecture easy and efficient. With **Tenantify**, you can quickly set up your application to support multiple tenants using a **single database**, with each tenant being identified by a **unique subdomain**.
 
@@ -20,13 +20,13 @@ To install **Tenantify**, follow these simple steps:
 1. Install the package via Composer:
 
 ```bash
-composer require wuhsien/tenantify
+composer require takeshiyu/tenantify
 ```
 
 2. Publish the configuration file:
 
 ```bash
-php artisan vendor:publish --provider="Wuhsien\Tenantify\TenantifyServiceProvider" --tag="config"
+php artisan vendor:publish --provider="TakeshiYu\Tenantify\TenantifyServiceProvider"
 ```
 
 ### Configuration
@@ -44,10 +44,10 @@ return [
 
 ### Custom Model
 
-If you want to use your custom model and use it for route binding, Make sure that your custom model use the `Wuhsien\Tenantify\Concerns\Tenantable` trait:
+If you want to use your custom model and use it for route binding, Make sure that your custom model use the `TakeshiYu\Tenantify\Concerns\Tenantable` trait:
 
 ```php
-use Wuhsien\Tenantify\Concerns\Tenantable;
+use TakeshiYu\Tenantify\Concerns\Tenantable;
 
 class YourCustomModel extends Model
 {
@@ -57,10 +57,10 @@ class YourCustomModel extends Model
 
 ### Query Scopes 
 
-To scope your queries correctly, apply the `Wuhsien\Tenantify\Concerns\HasTenancy` trait on your models:
+To scope your queries correctly, apply the `TakeshiYu\Tenantify\Concerns\HasTenancy` trait on your models:
 
 ```php
-use Wuhsien\Tenantify\Concerns\HasTenancy;
+use TakeshiYu\Tenantify\Concerns\HasTenancy;
 
 class YourModel extends Model
 {
@@ -68,7 +68,7 @@ class YourModel extends Model
 }
 ```
 
-### Route Macro
+### Usage
 
 In `routes/web.php` file, define your tenant-specific routes using the `tenancy` macro:
 
@@ -78,12 +78,18 @@ Route::tenancy(function () {
 });
 ```
 
+or, assign `TakeshiYu\Tenantify\Middleware\ResolveTenant` middleware to your routes or groups:
+
+```php
+Route::get('/', fn () => 'ok')->middleware('tenantify.resolve');
+```
+
 ### Current Tenant
 
 There are several methods available to work with current tenant:
 
 ```php
-use Wuhsien\Tenantify\Tenancy;
+use TakeshiYu\Tenantify\Tenancy;
 
 Tenancy::tenant();  // returns current tenant instance
 Tenancy::id();      // returns current tenant id
