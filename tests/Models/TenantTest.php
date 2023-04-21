@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Wuhsien\Tenantify\Concerns\Tenantable;

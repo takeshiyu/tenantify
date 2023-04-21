@@ -1,6 +1,6 @@
 <?php
 
-use Tests\TenantTest;
+use Tests\Models\TenantTest;
 use Wuhsien\Tenantify\Exceptions\TenancyNotInitializedException;
 use Wuhsien\Tenantify\Tenancy;
 

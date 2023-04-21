@@ -6,7 +6,7 @@
 
 * Automatic subdomain detection and tenant resolution
 * Subdomain-based routing with Laravel route macro
-* Tenant-aware database connection and query scopes
+* Tenant-aware query scopes
 * Middleware for tenant context and data isolation
 
 ### Installation
