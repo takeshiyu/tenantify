@@ -76,24 +76,14 @@ Route::tenancy(function () {
 
 ### Work with current tenant
 
-You can get the current tenant instance like this:
+There are several methods available to work with current tenant:
 
 ```php
 use Wuhsien\Tenantify\Tenancy;
 
-Tenancy::tenant();
-```
-
-or, get the current tenant id:
-
-```php
-Tenancy::id();
-```
-
-or get the current tenant slug:
-
-```php
-Tenancy::slug();
+Tenancy::tenant();  // returns current tenant instance
+Tenancy::id();      // returns current tenant id
+Tenancy::slug();    // returns current tenant slug
 ```
 
 IF no tenant is found, it will throw the `TenancyNotInitializedException`.
