@@ -47,6 +47,14 @@ Route::tenancy(function () {
 });
 ```
 
+### Testing 
+
+You can run the package's tests:
+
+```bash
+composer test
+```
+
 ## License
 
 Tenantify is open-sourced software licensed under the [MIT license](LICENSE.md).
