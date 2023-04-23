@@ -5,7 +5,7 @@
 <a href="https://packagist.org/packages/takeshiyu/tenantify"><img alt="Latest Version" src="https://img.shields.io/packagist/v/takeshiyu/tenantify"></a>
 <a href="https://packagist.org/packages/takeshiyu/tenantify"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/takeshiyu/tenantify"></a>
 
-**Tenantify** is a Laravel package designed to make implementing a multi-tenancy architecture easy and efficient. With **Tenantify**, you can quickly set up your application to support multiple tenants using a **single database**, with each tenant being identified by a **unique subdomain**.
+**Tenantify** is a Laravel package designed to make implementing a lightweight multi-tenancy architecture easy and efficient. With **Tenantify**, you can quickly set up your application to support multiple tenants using a **single database**, with each tenant being identified by a **unique subdomain**.
 			
 ### Features
 
