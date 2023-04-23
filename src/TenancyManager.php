@@ -6,7 +6,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use TakeshiYu\Tenantify\Exceptions\TenancyNotInitializedException;
-use TakeshiYu\Tenantify\Exceptions\TenantNotFoundException;
 
 class TenancyManager
 {
