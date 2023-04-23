@@ -49,7 +49,7 @@
         "test:lint": "pint --test",
         "test:unit": [
             "@putenv XDEBUG_MODE=coverage",
-            "pest --colors=always -v"
+            "pest --profile --coverage --colors=always -v"
         ],
         "test": [
             "@test:lint",
