@@ -32,3 +32,8 @@ test('Load the correct tenant data without tenancy macro', function () {
     $this->assertEquals($tenant->id, Tenancy::id());
     $this->assertEquals($tenant->slug, Tenancy::slug());
 });
+
+test('Teannt not found when using tenancy macro', function () {
+    $response = $this->get('http://foo.tenantify.test/home');
+    $response->assertStatus(404);
+});

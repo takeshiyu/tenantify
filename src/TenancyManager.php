@@ -6,6 +6,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use TakeshiYu\Tenantify\Exceptions\TenancyNotInitializedException;
+use TakeshiYu\Tenantify\Exceptions\TenantNotFoundException;
 
 class TenancyManager
 {
@@ -72,6 +73,7 @@ class TenancyManager
     {
         $subdomain = explode('.', $request->getHost())[0];
 
-        return $this->config['tenant_model']::where($this->config['tenant_slug'], $subdomain)->first();
+        return $this->config['tenant_model']::where($this->config['tenant_slug'], $subdomain)
+            ->firstOr(fn () => abort(404, 'Tenant is not found'));
     }
 }
